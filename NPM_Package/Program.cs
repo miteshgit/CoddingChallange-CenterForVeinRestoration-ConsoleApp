@@ -6,7 +6,7 @@ namespace NPM_Package
     {
         static void Main(string[] args)
         {
-            if (args == null)
+             if (args == null)
             {
                 Console.WriteLine("args is null");
             }
@@ -15,7 +15,10 @@ namespace NPM_Package
                 var packageManager = new PackageManager();
                 string argument = args[0];
                 var dependencies = packageManager.GetAllDependencies(argument);
-                dependencies.ForEach(x => Console.WriteLine(x));
+                foreach(var x in dependencies)
+                {
+                    Console.WriteLine(x);
+                }
             }
             Console.ReadLine();
         }
